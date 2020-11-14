@@ -19,11 +19,16 @@ public class SpringBootConsoleApplication {
 //		boolean isDayInWeekend = workingDayCalculator.check(new Date());
 //		System.out.println("Dzień jest w weekend " + (isDayInWeekend ? "TAK" : "NIE"));
 
+
 		String[] beans = context.getBeanDefinitionNames();
 		Arrays.sort(beans);
 		for (String bean : beans) {
 			System.out.println(bean);
 		}
+
+
+		PropertyChecker propertyChecker = context.getBean(PropertyChecker.class);
+		System.out.println(propertyChecker.print());
 	}
 
 }
